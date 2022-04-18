@@ -62,8 +62,6 @@ class DonationController extends Controller
 
             ];
 
-        
-
             $snapToken = \Midtrans\Snap::getSnapToken($payload);
             // generate snap token end
 
@@ -76,5 +74,7 @@ class DonationController extends Controller
             $this->response['snap_token'] = $snapToken;
         });
 
+        //mengirim response dalam bentuk json
+        return response()->json($this->response);
      }
 }
